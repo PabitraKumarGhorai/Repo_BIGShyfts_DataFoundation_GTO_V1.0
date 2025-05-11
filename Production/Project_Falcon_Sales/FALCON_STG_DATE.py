@@ -25,7 +25,7 @@ print(mnt_raw)
 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("DataFrame").getOrCreate()
-df = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/date.csv")
+df = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/falcon_sales_files/date.csv")
 display(df)
 
 # COMMAND ----------
