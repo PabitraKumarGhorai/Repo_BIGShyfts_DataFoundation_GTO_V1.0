@@ -27,7 +27,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
 spark = SparkSession.builder.appName("DataFrame").getOrCreate()
-df_check = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/transaction.csv")
+df_check = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/falcon_sales_files/transaction.csv")
 df_check.createOrReplaceTempView('transaction_tbl')
 
 # COMMAND ----------
@@ -50,7 +50,7 @@ df_check.createOrReplaceTempView('transaction_tbl')
 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("DataFrame").getOrCreate()
-df = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/transaction.csv")
+df = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/falcon_sales_files/transaction.csv")
 display(df)
 
 

@@ -26,7 +26,7 @@ print(mnt_raw)
 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("DataFrame").getOrCreate()
-df1 = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/customers.csv")
+df1 = spark.read.format('csv').option("header","true").option('inferSchema','true').load(f"{mnt_raw}/falcon_sales_files/customers.csv")
 display(df1)
 df1.createOrReplaceTempView("TEMP_CUSTOMER")
 
